@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix='N.' , description='Galactic Network help Comm
 bot.remove_command('help')
 
 bot.load_extension("cogs.Commands")
-bot.load_extension("cogs.docs")
+bot.load_extension("cogs.Docs")
 bot.load_extension("cogs.Moderation")
 bot.load_extension("cogs.Owner_commands")
 bot.load_extension("cogs.error_handler")
