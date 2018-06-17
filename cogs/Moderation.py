@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import asyncio
+import time
 
 class MODERATION():
     def __init__(self, bot):
@@ -34,7 +35,7 @@ class MODERATION():
 
     @commands.command()
     @commands.has_permissions(manage_messages = True)
-    async def mute(self, ctx, user:discord.Member=None):
+    async def mute(self, ctx, user:discord.Member=None, time):
         if user == None:
             await ctx.send("Specify a user to mute it!")
         elif user == ctx.author.id:
@@ -44,7 +45,7 @@ class MODERATION():
         else:
             await ctx.send("I muted {}".format(user.name))
             await ctx.channel.set_permissions(user, send_messages=False)
-            await asyncio.sleep(120)
+            await asyncio.sleep(time)
             await ctx.channel.set_permissions(user, send_messages=True)
             await ctx.send("You are unmuted {} !".format(user.name))
 
