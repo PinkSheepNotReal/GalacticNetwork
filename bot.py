@@ -3,7 +3,11 @@ from discord.ext import commands
 import traceback, os
 
 # We use multiple files. This code help us to use the commands from those files. Info : The name of extensions are coming from : file name and folder name like at my first extension cogs.Commands
-startup_extensions = ["cogs.Commands" , "cogs.Owner_commands" , "cogs.Docs" , "cogs.error_handler" , "cogs.Moderation"] 
+bot.load_extension("cogs.Commands")
+bot.load_extension("cogs.docs")
+bot.load_extension("cogs.Moderation")
+bot.load_extension("cogs.Owner_commands")
+bot.load_extension("cogs.error_handler")
 
 # here we put the prefix for all commands
 bot = commands.Bot(command_prefix='N.' , description='Galactic Network help Commands')
@@ -68,13 +72,13 @@ async def hello(ctx):
 
 # Here we make a little error handler for extensions
 
-if __name__ == '__main__':
-    for extension in startup_extensions:
-        try:
-            bot.load_extension(extension)
-        except Exception as e:
-            print('Failed to load {ex}'.format(ex=extension))
-            traceback.print_exc()
+#if __name__ == '__main__':
+    #for extension in startup_extensions:
+        #try:
+            #bot.load_extension(extension)
+        #except Exception as e:
+            #print('Failed to load {ex}'.format(ex=extension))
+            #traceback.print_exc()
 
 # Here we put our bot token to make the all code work
 
