@@ -1,3 +1,5 @@
+import discord
+from discord.ext import commands
 import textwrap
 import traceback
 from contextlib import redirect_stdout
