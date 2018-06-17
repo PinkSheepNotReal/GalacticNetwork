@@ -155,7 +155,7 @@ class MemberCommands():
         await ctx.send(embed=avatar)
         
     @commmands.command(pass_context=True)
-    async def AskBall(ctx):
+    async def AskBall(self, ctx):
         choice = random.randint(1,3)
         if choice == 1:
                 await ctx.send("Yes")
