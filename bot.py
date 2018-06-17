@@ -78,4 +78,6 @@ if __name__ == '__main__':
 
 # Here we put our bot token to make the all code work
 
-bot.run('ur token')
+if not os.environ.get('TOKEN'):
+    print("no token found")
+bot.run(os.environ.get('TOKEN').strip('"'))
