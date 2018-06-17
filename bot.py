@@ -3,16 +3,17 @@ from discord.ext import commands
 import traceback, os
 
 # We use multiple files. This code help us to use the commands from those files. Info : The name of extensions are coming from : file name and folder name like at my first extension cogs.Commands
-bot.load_extension("cogs.Commands")
-bot.load_extension("cogs.docs")
-bot.load_extension("cogs.Moderation")
-bot.load_extension("cogs.Owner_commands")
-bot.load_extension("cogs.error_handler")
 
 # here we put the prefix for all commands
 bot = commands.Bot(command_prefix='N.' , description='Galactic Network help Commands')
 # This code removes the beggining help command
 bot.remove_command('help')
+
+bot.load_extension("cogs.Commands")
+bot.load_extension("cogs.docs")
+bot.load_extension("cogs.Moderation")
+bot.load_extension("cogs.Owner_commands")
+bot.load_extension("cogs.error_handler")
 
 # This event makes to put an : play game , status , and print something in cmd when bot is on
 @bot.event
