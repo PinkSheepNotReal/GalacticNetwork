@@ -35,7 +35,7 @@ class MODERATION():
 
     @commands.command()
     @commands.has_permissions(manage_messages = True)
-    async def mute(self, ctx, user:discord.Member=None:
+    async def mute(self, ctx, user:discord.Member=None):
         if user == None:
             await ctx.send("Specify a user to mute it!")
         elif user == ctx.author.id:
