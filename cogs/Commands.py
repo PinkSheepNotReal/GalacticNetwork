@@ -153,6 +153,17 @@ class MemberCommands():
         avatar = discord.Embed(title="{}'s avatar".format(ctx.author.name), color=discord.Colour.orange())
         avatar.add_field(name="{}".format(User.avatar_url), inline=False)
         await ctx.send(embed=avatar)
+        
+    @commmands.command(pass_context=True)
+    async def AskBall(ctx):
+        choice = random.randint(1,3)
+        if choice == 1:
+                await ctx.send("Yes")
+        if choice == 2:
+                await ctx.send("No")
+        if choice == 3:
+    	        await ctx.send("Maybe")
+
  
 
 def setup(bot):
