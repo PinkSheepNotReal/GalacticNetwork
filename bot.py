@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import traceback, os
+import asyncio
+import random
 
 # We use multiple files. This code help us to use the commands from those files. Info : The name of extensions are coming from : file name and folder name like at my first extension cogs.Commands
 
@@ -18,10 +20,17 @@ bot.load_extension("cogs.error_handler")
 # This event makes to put an : play game , status , and print something in cmd when bot is on
 @bot.event
 async def on_ready():
-    await bot.change_presence(game=discord.Game(name='Galactic Netorks in! N.help'), status='dnd')
-    print(bot.user.name)
-    print(bot.user.id)
-
+    presence = [
+        "N.help | Loading Networks...",
+        "N.help | Playing with pepole",
+        "N.help | Helping pepole"
+    ]
+# the list can be as long as you want, just add more.
+    while True:
+        await bot.change_presence(activity=discord.Game(name=random.choice(presence)))
+        await asyncio.sleep(15)
+        
+        
 def has_role_in_my_server(name):
     def wrapper(ctx):
         x = discord.utils.get(bot.guilds, id=416562446506000386)
