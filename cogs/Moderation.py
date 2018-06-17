@@ -35,7 +35,7 @@ class MODERATION():
 
     @commands.command()
     @commands.has_permissions(manage_messages = True)
-    async def mute(self, ctx, user:discord.Member=None, time):
+    async def mute(self, ctx, user:discord.Member=None):
         if user == None:
             await ctx.send("Specify a user to mute it!")
         elif user == ctx.author.id:
@@ -45,7 +45,7 @@ class MODERATION():
         else:
             await ctx.send("I muted {}".format(user.name))
             await ctx.channel.set_permissions(user, send_messages=False)
-            await asyncio.sleep(time)
+            await asyncio.sleep(120)
             await ctx.channel.set_permissions(user, send_messages=True)
             await ctx.send("You are unmuted {} !".format(user.name))
 
