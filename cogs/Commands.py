@@ -158,7 +158,7 @@ class MemberCommands():
     async def botinfo(self, ctx):
         info = discord.Embed(title="Galactic Network stats", color=0xff8080)
         info.add_field(name="servers", value="Servers: {}".format(self.bot.guilds))
-        info.add_footer(text="this command is in development")
+        info.set_footer(text="this command is in development")
         await ctx.send(embed=info)
         
  
