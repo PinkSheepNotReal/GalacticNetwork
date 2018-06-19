@@ -154,6 +154,13 @@ class MemberCommands():
         avatar.add_field(name="{}".format(User.avatar_url), inline=False)
         await ctx.send(embed=avatar)
         
+    @commands.command()
+    async def botinfo(self, ctx):
+        info = discord.Embed(title="Galactic Network stats" color=0xff8080)
+        info.add_field(name="servers", value="Servers: {}".format(bot.servers))
+        info.add_footer(text="this command is in development")
+        await ctx.send(embed=info)
+        
  
 
 def setup(bot):
