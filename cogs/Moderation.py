@@ -49,8 +49,8 @@ class MODERATION():
             await ctx.channel.set_permissions(user, send_messages=True)
             await ctx.send("You are unmuted {} !".format(user.name))
             
-    @command.command()
-    @command.has_permissions(ban_members = True)
+    @commands.command()
+    @commands.has_permissions(ban_members = True)
     async def unban(self, ctx, user:discord.Member=None):
         if user == None:
             await ctx.send("Specify a user to unban it!")
