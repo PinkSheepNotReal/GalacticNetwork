@@ -48,8 +48,18 @@ class MODERATION():
             await asyncio.sleep(120)
             await ctx.channel.set_permissions(user, send_messages=True)
             await ctx.send("You are unmuted {} !".format(user.name))
-
-
+            
+    @command.command()
+    @command.has_permissions(ban_members = True)
+    async def unban(self, ctx, user:discord.Member=None):
+        if user == None:
+            await ctx.send("Specify a user to unban it!)
+        elif user == ctx.author.id:
+            await ctx.send("How can so dumb u can be to try to unban urself when u are not banned?")
+        else:
+            await ctx.send("I unbaned {}".format(user.name))
+            await user.unban()
+                           
 
 def setup(bot):
     bot.add_cog(MODERATION(bot))
