@@ -53,7 +53,7 @@ class MODERATION():
     @command.has_permissions(ban_members = True)
     async def unban(self, ctx, user:discord.Member=None):
         if user == None:
-            await ctx.send("Specify a user to unban it!)
+            await ctx.send("Specify a user to unban it!")
         elif user == ctx.author.id:
             await ctx.send("How can so dumb u can be to try to unban urself when u are not banned?")
         else:
