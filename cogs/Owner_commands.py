@@ -27,10 +27,6 @@ class OwnerCommands():
         for i in range(times):
             await ctx.send(content)
 
-    @commands.command()
-    @commands.is_owner()
-    async def eval(self, ctx, *, code):
-        await ctx.send(eval(code))
 
     @commands.is_owner()
     @commands.command()
