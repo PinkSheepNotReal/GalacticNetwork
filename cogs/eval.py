@@ -5,7 +5,7 @@ from discord.ext import commands
 import datetime
 from collections import Counter
 import io
-import textwarp
+import textwrap
 from contextlib import redirect_stdout
 
 
