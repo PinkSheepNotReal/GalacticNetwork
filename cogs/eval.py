@@ -5,6 +5,7 @@ from discord.ext import commands
 import datetime
 from collections import Counter
 import io
+import textwarp
 
 class Eval:
     
