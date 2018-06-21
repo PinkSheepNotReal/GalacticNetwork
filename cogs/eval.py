@@ -6,7 +6,7 @@ import datetime
 from collections import Counter
 import io
 import textwarp
-import from contextlib import redirect_stdout
+from contextlib import redirect_stdout
 
 
 class Eval:
