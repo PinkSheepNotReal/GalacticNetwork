@@ -4,6 +4,7 @@ from discord.ext import commands
 # to expose to the eval command
 import datetime
 from collections import Counter
+import io
 
 class Eval:
     
