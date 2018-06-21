@@ -16,7 +16,7 @@ bot.load_extension("cogs.Docs")
 bot.load_extension("cogs.Moderation")
 bot.load_extension("cogs.Owner_commands")
 bot.load_extension("cogs.error_handler")
-bot.load_extension("cogs.Eval")
+bot.load_extension("cogs.eval")
 
 # This event makes to put an : play game , status , and print something in cmd when bot is on
 @bot.event
