@@ -25,11 +25,13 @@ async def on_ready():
         "N.help | Loading Networks...",
         "N.help | Playing with pepole",
         "N.help | Helping pepole"
+        "N.help | Seeing my friends"
+        "N.help | Thinking for new commands"
     ]
 # the list can be as long as you want, just add more.
     while True:
         await bot.change_presence(activity=discord.Game(name=random.choice(presence)))
-        await asyncio.sleep(15)
+        await asyncio.sleep(5)
         
         
 def has_role_in_my_server(name):
