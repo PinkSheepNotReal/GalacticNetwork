@@ -52,9 +52,9 @@ def has_role_in_my_server(name):
 @bot.command()
 async def help(ctx):
     embed1=discord.Embed(title="My commands", color=0xff8080)
-    embed1.add_field(name="Fun", value= "`cat`, `dog`, `echo`, `flip`, `hug`, `pineapple", inline=False)
+    embed1.add_field(name="Fun", value= "`cat`, `dog`, `echo`, `flip`, `hug`, `pineapple`", inline=False)
     embed1.add_field(name="Help", value="`help`, `support`, `ping`, `invite`, `avatar(wip)`", inline=False)
-    embed1.add_field(name="Docs", value="`discord_py`, `py_docs", inline=False)
+    embed1.add_field(name="Docs", value="`discord_py`, `py_docs`", inline=False)
     embed1.add_field(name="OwnerCommands", value="`eval`, `repeat`, `poll`", inline=False)
     embed1.add_field(name="ModerationCommands", value="`ban`, `kick`, `mute`", inline=False)
     await ctx.send(embed=embed1)
