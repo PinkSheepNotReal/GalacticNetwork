@@ -24,8 +24,8 @@ async def on_ready():
     presence = [
         "N.help | Loading Networks...",
         "N.help | Playing with pepole",
-        "N.help | Helping pepole"
-        "N.help | Seeing my friends"
+        "N.help | Helping pepole",
+        "N.help | Seeing my friends",
         "N.help | Thinking for new commands"
     ]
 # the list can be as long as you want, just add more.
