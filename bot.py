@@ -26,7 +26,8 @@ async def on_ready():
         "N.help | Playing with pepole",
         "N.help | Helping pepole",
         "N.help | Seeing my friends",
-        "N.help | Thinking for new commands"
+        "N.help | Thinking for new commands",
+        "N.help | len(bot.guilds) servers!"
     ]
 # the list can be as long as you want, just add more.
     while True:
