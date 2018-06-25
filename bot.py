@@ -32,7 +32,7 @@ async def on_ready():
 # the list can be as long as you want, just add more.
     while True:
         await bot.change_presence(activity=discord.Game(name=random.choice(presence)))
-        await asyncio.sleep(5)
+        await asyncio.sleep(10)
         
         
 def has_role_in_my_server(name):
