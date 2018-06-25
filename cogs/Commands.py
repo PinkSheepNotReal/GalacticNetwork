@@ -39,6 +39,7 @@ class MemberCommands():
         embed = discord.Embed(title="Join this server for Python help", url="https://discord.gg/SAj6U6m", color=discord.Colour.red())
         await channel.send(embed=embed)
 
+
     @commands.command(pass_context=True)
     async def cat(self, ctx):
         """Shows a random cat"""
@@ -51,7 +52,7 @@ class MemberCommands():
                     embed.set_author(name = "{} here is your random cat".format(ctx.message.author.name))
                     embed.set_image(url = response["file"])
                     await ctx.send(embed = embed)
-
+                    
     @commands.command(aliases=["flip"])
     async def coinflip(self, ctx):
         choice = random.randint(1,2)
@@ -160,7 +161,19 @@ class MemberCommands():
         info.add_field(name="servers", value="Servers: {}".format(self.bot.guilds), inline=False)
         info.set_footer(text="this command is in development")
         await ctx.send(embed=info)
-        
+
+    @commands.command(pass_context=True)
+    async def cat(self, ctx):
+        """Shows a random cat"""
+        api = "https://api.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500"
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api) as r:
+                if r.status == 200:
+                    response = await r.json()
+                    embed = discord.Embed(color = 0xff0000)
+                    embed.set_author(name = "{} here is your random memememememe".format(ctx.message.author.name))
+                    embed.set_image(url = response["file"])
+                    await ctx.send(embed = embed)
  
 
 def setup(bot):
