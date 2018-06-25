@@ -163,7 +163,7 @@ class MemberCommands():
         await ctx.send(embed=info)
 
     @commands.command(pass_context=True)
-    async def cat(self, ctx):
+    async def meme(self, ctx):
         """Shows a random cat"""
         api = "https://api.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500"
         async with aiohttp.ClientSession() as session:
