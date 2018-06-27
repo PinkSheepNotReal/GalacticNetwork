@@ -149,11 +149,27 @@ class MemberCommands():
         embed.add_field(name="Status", value="{}".format(ctx.author.status), inline=False)
         await ctx.send(embed=embed)
             
-    @commands.command()
-    async def avatar(self, ctx):
-        avatar = discord.Embed(title="{}'s avatar".format(ctx.author.name), color=discord.Colour.orange())
-        avatar.add_field(name="{}".format(User.avatar_url), inline=False)
-        await ctx.send(embed=avatar)
+    @commands.command(aliases=['av'])
+    async def avatar(self, ctx, user: discord.Member = None):
+        """Reveal a user's avatar."""
+        if user is None:
+            av = ctx.message.author.avatar_url
+            if '.gif' in av:
+                av += "&f=.gif"
+            color = discord.Color.green()
+            em = discord.Embed(color=color, title=ctx.message.author.name)
+            em.set_author(name='Profile Picture')
+            em.set_image(url=av)
+            await ctx.send(embed=em)                  
+        else:
+            av = user.avatar_url
+            if '.gif' in av:
+                av += "&f=.gif"
+            color = discord.Color.green()
+            em = discord.Embed(color=color, title=user.name)
+            em.set_author(name='Profile Picture')
+            em.set_image(url=av)
+            await ctx.send(embed=em)
         
     @commands.command()
     async def botinfo(self, ctx):
