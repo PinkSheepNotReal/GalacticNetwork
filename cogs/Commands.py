@@ -23,7 +23,7 @@ class MemberCommands():
         """some info about the bot"""
         info = discord.Embed(title="Info", color=discord.Colour.blue())
         info.add_field(name="**Bot Owner:**", value="[Galactic] Capitan Rex The Clone#9168", inline=False)
-        info.add_field(name="**Credits at commands/codes:**", value="Twelve, Cool, Kingalma, Haunt, [60hz] Saggytarius, Maninder, Moog, JellyWX, Gerasimenko, Vilgot, Dot, kxnzy  ", inline=False)
+        info.add_field(name="**Credits at commands/codes:**", value="Twelve, Cool, Kingalma, Haunt, [60hz] Saggytarius, Maninder, Moog, JellyWX, Gerasimenko, Vilgot, Dot, kxnzy, BloodyPikachu  ", inline=False)
         await ctx.send(embed=info)
 
     @commands.command(aliases=["invitation"])
