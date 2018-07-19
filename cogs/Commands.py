@@ -42,11 +42,11 @@ class MemberCommands():
 
     @commands.command(pass_context=True)
     async def cat(self, ctx):
-    session = aiohttp.ClientSession(loop=bot.loop)
-    res = await session.get("https://catapi.glitch.me/random")
-    data = await res.json()
-    await ctx.send(data["url"])
-    await session.close()
+        session = aiohttp.ClientSession(loop=bot.loop)
+        res = await session.get("https://catapi.glitch.me/random")
+        data = await res.json()
+        await ctx.send(data["url"])
+        await session.close()
                     
     @commands.command(aliases=["flip"])
     async def coinflip(self, ctx):
