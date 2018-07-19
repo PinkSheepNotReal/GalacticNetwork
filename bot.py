@@ -9,7 +9,7 @@ import aiohttp
 
 # here we put the prefix for all commands
 bot = commands.Bot(command_prefix='N.' , description='Galactic Network help Commands')
-bot.session.get = aiohttp.ClientSession(loop=bot.loop)
+bot.session = aiohttp.ClientSession(loop=bot.loop)
 # This code removes the beggining help command
 bot.remove_command('help')
 
