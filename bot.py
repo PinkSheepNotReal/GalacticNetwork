@@ -8,6 +8,7 @@ import random
 
 # here we put the prefix for all commands
 bot = commands.Bot(command_prefix='N.' , description='Galactic Network help Commands')
+bot.session.get = aiohttp.ClientSession(loop=bot.loop)
 # This code removes the beggining help command
 bot.remove_command('help')
 
@@ -60,6 +61,14 @@ async def help(ctx):
     embed1.add_field(name="ModerationCommands", value="`ban`, `kick`, `mute`", inline=False)
     await ctx.send(embed=embed1)
 
+@bot.command()
+async def cat(ctx):
+    res = await session.get("https://catapi.glitch.me/random")
+    data = await res.json()
+    await ctx.send(data["url"])
+    await session.close()
+    
+    
 @bot.command()
 @has_role_in_my_server("Bot Ultra Helper")
 async def hello(ctx):
