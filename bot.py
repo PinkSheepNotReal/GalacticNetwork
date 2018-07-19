@@ -68,6 +68,7 @@ async def cat(ctx):
     data = await res.json()
     embed=discord.Embed(title="your cat", color=0xff8080)
     embed.set_image(url = data['url'])
+    embed.set_footer(text="powered by https://catapi.glitch.me/random")
     await ctx.send(embed=embed)
     await session.close()
 #await ctx.send(data["url"])    
