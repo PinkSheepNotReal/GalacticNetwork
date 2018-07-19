@@ -64,7 +64,7 @@ async def help(ctx):
 
 @bot.command()
 async def cat(ctx):
-    res = await session.get("https://catapi.glitch.me/random")
+    res = await bot.session.get("https://catapi.glitch.me/random")
     data = await res.json()
     await ctx.send(data["url"])
     await session.close()
