@@ -66,9 +66,11 @@ async def help(ctx):
 async def cat(ctx):
     res = await bot.session.get("https://catapi.glitch.me/random")
     data = await res.json()
-    await ctx.send(data["url"])
+    embed=discord.Embed(title="your cat", color=0xff8080)
+    embed.set_image(url = response['data'])
+    await ctx.send(embed=embed)
     await session.close()
-    
+#await ctx.send(data["url"])    
     
 @bot.command()
 @has_role_in_my_server("Bot Ultra Helper")
