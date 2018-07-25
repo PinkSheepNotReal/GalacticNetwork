@@ -4,7 +4,6 @@ import traceback, os
 import asyncio
 import random
 import aiohttp
-import session
 
 # We use multiple files. This code help us to use the commands from those files. Info : The name of extensions are coming from : file name and folder name like at my first extension cogs.Commands
 
@@ -71,7 +70,7 @@ async def cat(ctx):
     embed.set_image(url = data['url'])
     embed.set_footer(text="powered by https://catapi.glitch.me/random")
     await ctx.send(embed=embed)
-    await session.close()
+    await bot.session.close()
 #await ctx.send(data["url"])    
     
 @bot.command()
