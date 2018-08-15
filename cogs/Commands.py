@@ -164,18 +164,16 @@ class MemberCommands():
         info.set_footer(text="this command is in development")
         await ctx.send(embed=info)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def meme(self, ctx):
-        """Shows a random cat"""
-        api = "https://api.reddit.com/u/kerdaloo/m/dankmemer/top/.json?sort=top&t=day&limit=500"
+        """Get a amazing meme"""
         async with aiohttp.ClientSession() as session:
-            async with session.get(api) as r:
-                if r.status == 200:
-                    response = await r.json()
-                    embed = discord.Embed(color = 0xff0000)
-                    embed.set_author(name = "{} here is your random memememememe".format(ctx.message.author.name))
-                    embed.set_image(url = response["file"])
-                    await ctx.send(embed = embed)
+            async with session.get("https://api.reddit.com/r/me_irl/random") as r:
+                data = await r.json()
+                embed = discord.Embed(title="Here is ur meme!", color=0x00ff80)
+                embed.set_image(url=data[0]["data"]["children"][0]["data"]["url"])
+                embed.set_footer(text=f"This was requested by {ctx.author}")
+                await ctx.send(embed=embed)
  
 
 def setup(bot):
